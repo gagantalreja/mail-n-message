@@ -11,7 +11,8 @@ Mail-N-message API is REST API using which someone can schedule tasks to send ma
 import requests, json
 
 request = {
-    'datetime':{
+    
+    'datetime': {
         'year': 2019 #int,
         'month': 11 #int,
         'day': 29 #int,
@@ -19,13 +20,16 @@ request = {
         'minute': 12 #int,
         'second': 0 #int,
     },
-    'message': 'Hello' #str,
-    'mail':{
+    
+    'message': 'Hello', #str
+    
+    'mail': {
         'to': ['abc@gmail.com', 'xyz@gmail.com'], # list of strings
         'from': 'pqr@gmail.com', #str
         'subject': 'test mail', #str
     },
-    'sms':{
+    
+    'sms': {
         'to': '<recipient mobile number with country code eg: +911234567890>', #str
         'from': '<sender mobile number with country code eg: +911234567890>', #str
         'apikey': '<your-way2sms-apikey>', #str
@@ -33,7 +37,12 @@ request = {
     }
 }
 
-api_url = ' https://mnm-api-v1.herokuapp.com/v1/mail'
+value = 'both'
+# value = 'sms' <to only send sms. need not include mail details in request> 
+# value = 'mail' <to only send mails. need not include sms details in request>
+# value = 'both' <to send both mail and sms. both mail and sms details should be included>
+
+api_url = f'https://mnm-api-v1.herokuapp.com/v1/{value}'
 r = requests.post(api_url, data = json.dumps(request), headers = {'Content-Type': 'application/json'})
 print(r.status_code)
 print(r.json())
