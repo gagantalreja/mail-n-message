@@ -38,7 +38,7 @@ print(r.json())
 
 ```
 
-Credits
+## Credits
 
 Created and Developed by: [Gagan Talreja](https://gagantalreja.github.io/)
 Contact: gtcms1@gmail.com
