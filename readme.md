@@ -1,6 +1,8 @@
 # Mail-N-Message API (mnm-api)
 
-Mail-N-message API is REST API using which someone can schedule tasks to send mail and sms through computer programs. The API makes use of way2sms API to send text messages and Flask_mail module to send emails.
+Mail-N-message API is REST API using which someone can schedule tasks to send mail and sms through computer programs. The API makes use of way2sms API to send text messages and Flask_mail module to send emails. The scheduled mails and messages will be sent to the given email ids and mobile numbers respectively at the specified date and time. The scheduling has been done using [APScheduler](https://apscheduler.readthedocs.io/en/latest/) module in python and API has been created using Flask.
+
+> The API code is available in app.py.
 
 ## Usage
 
